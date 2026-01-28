@@ -9,7 +9,6 @@ dp[1] = a[1]
 dp[2] = a[2] + a[1]
 
 for i in range (3, n+1):
-    for j in range (3, i+1):
-        dp[i] = max(dp[i], dp[i-j+1] + a[i], dp[i-j] + a[i-1] + a[i])
+    dp[i] = max(dp[i-1], dp[i-2] + a[i], dp[i-3] + a[i-1] + a[i])
 
 print(max(dp))
